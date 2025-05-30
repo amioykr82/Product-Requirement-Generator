@@ -1,7 +1,7 @@
 from openai import OpenAI
-from config import OPENAI_API_KEY
 
-client = OpenAI(api_key=OPENAI_API_KEY)
+# ✅ Initialize OpenAI with environment variable (OPENAI_API_KEY must be set in Railway)
+client = OpenAI()
 
 def generate_answer(context: str, query: str) -> str:
     system_message = """
