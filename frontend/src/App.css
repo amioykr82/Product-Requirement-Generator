@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  background-color: #f5f7fb;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.App {
+  max-width: 860px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.input-form {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.03);
+  margin-bottom: 2rem;
+}
+
+.upload-area,
+.query-box {
+  margin-bottom: 1.5rem;
+}
+
+.upload-label,
+.query-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+textarea {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+input[type="file"] {
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #aaa;
+}
+
+.response-section {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.response-block {
+  background-color: #ffffff;
+  padding: 1.25rem;
+  border-left: 4px solid #007bff;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.section-header.blue {
+  color: #1a73e8;
+  border-left: 4px solid #1a73e8;
+}
+
+.section-header.green {
+  color: #28a745;
+  border-left: 4px solid #28a745;
+}
+
+.chunk-section {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  border: 1px solid #ddd;
+}
+
+.chunk-box {
+  background-color: #f7f7f7;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-left: 4px solid #888;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: auto;
+  white-space: pre-wrap;         /* Wrap long lines */
+  word-wrap: break-word;         /* Break long words */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
