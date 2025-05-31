@@ -1,4 +1,4 @@
 import os
 
-QDRANT_HOST = os.getenv("QDRANT_HOST", "localhost")
-QDRANT_PORT = int(os.getenv("QDRANT_PORT", "6333"))
+QDRANT_HOST = "qdrant.railway.internal"
+QDRANT_PORT = 6333
