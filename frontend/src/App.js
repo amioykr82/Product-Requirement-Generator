@@ -54,13 +54,12 @@ const parseAnswer = () => {
   let titleContent = "";
   let scopeContent = "";
 
-  const titleMatch = answer.match(/(?:^|\n)title[:\-]?\s*(.*?)(?=\n{2,}|scope and objective[:\-]?)/is);
-  const scopeMatch = answer.match(/scope and objective[:\-]?\s*(.*)/is);
+  const titleMatch = answer.match(/(?:^|\n)title[:-]?\s*(.*?)(?=\n{2,}|scope and objective[:-]?)/is);
+  const scopeMatch = answer.match(/scope and objective[:-]?\s*(.*)/is);
 
   if (titleMatch && titleMatch[1]) titleContent = titleMatch[1].trim();
   if (scopeMatch && scopeMatch[1]) scopeContent = scopeMatch[1].trim();
 
-  // fallback if parsing fails
   if ((!titleContent || titleContent.length < 10) && answer) {
     titleContent = answer.trim();
     scopeContent = "";
