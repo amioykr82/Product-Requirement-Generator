@@ -38,7 +38,7 @@ pydantic_core==2.16.3
 python-dotenv==1.0.1
 python-multipart==0.0.9
 PyYAML==6.0.1
-qdrant-client==1.6.1
+qdrant-client==1.14.2
 regex==2023.12.25
 requests==2.31.0
 safetensors==0.4.2
@@ -56,5 +56,5 @@ tqdm==4.66.2
 transformers==4.39.3
 typing-inspection==0.1.0
 typing_extensions==4.9.0
-urllib3==2.2.1
+urllib3==1.26.18
 uvicorn==0.29.0
