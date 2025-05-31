@@ -4,7 +4,11 @@ import uuid
 from config import QDRANT_HOST, QDRANT_PORT
 
 
-client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
+client = QdrantClient(
+    host=QDRANT_HOST,
+    port=QDRANT_PORT,
+    https=False  # ✅ HTTP since port 6333 is not HTTPS-enabled
+)
 
 def init_collection(name):
     if name not in [c.name for c in client.get_collections().collections]:
