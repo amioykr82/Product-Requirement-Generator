@@ -33,7 +33,8 @@ function App() {
     setChunks([]);
 
     try {
-      const response = await axios.post("http://localhost:8000/query", formData, {
+      const API_BASE = process.env.REACT_APP_BACKEND_URL;
+      const response = await axios.post("${API_BASE}/query", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
