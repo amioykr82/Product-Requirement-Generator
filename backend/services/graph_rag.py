@@ -3,6 +3,7 @@ from qdrant_client.models import VectorParams, Distance, PointStruct
 import uuid
 from config import QDRANT_HOST, QDRANT_PORT
 
+
 client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
 
 def init_collection(name):
