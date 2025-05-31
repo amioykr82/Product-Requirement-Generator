@@ -9,6 +9,8 @@ function App() {
   const [chunks, setChunks] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const API_BASE = process.env.REACT_APP_BACKEND_URL;
+
   const handleFileChange = (e) => {
     setPdfFile(e.target.files[0]);
   };
@@ -33,8 +35,7 @@ function App() {
     setChunks([]);
 
     try {
-      const API_BASE = process.env.REACT_APP_BACKEND_URL;
-      const response = await axios.post("${API_BASE}/query", formData, {
+      const response = await axios.post(`${API_BASE}/query`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -50,26 +51,24 @@ function App() {
     setLoading(false);
   };
 
-const parseAnswer = () => {
-  let titleContent = "";
-  let scopeContent = "";
+  const parseAnswer = () => {
+    let titleContent = "";
+    let scopeContent = "";
 
-  const titleMatch = answer.match(/(?:^|\n)title[:-]?\s*(.*?)(?=\n{2,}|scope and objective[:-]?)/is);
-  const scopeMatch = answer.match(/scope and objective[:-]?\s*(.*)/is);
+    const titleMatch = answer.match(/(?:^|\n)title[:-]?\s*(.*?)(?=\n{2,}|scope and objective[:-]?)/is);
+    const scopeMatch = answer.match(/scope and objective[:-]?\s*(.*)/is);
 
-  if (titleMatch && titleMatch[1]) titleContent = titleMatch[1].trim();
-  if (scopeMatch && scopeMatch[1]) scopeContent = scopeMatch[1].trim();
+    if (titleMatch && titleMatch[1]) titleContent = titleMatch[1].trim();
+    if (scopeMatch && scopeMatch[1]) scopeContent = scopeMatch[1].trim();
 
-  if ((!titleContent || titleContent.length < 10) && answer) {
-    titleContent = answer.trim();
-    scopeContent = "";
-  }
+    // fallback if parsing fails
+    if ((!titleContent || titleContent.length < 10) && answer) {
+      titleContent = answer.trim();
+      scopeContent = "";
+    }
 
-  return { titleContent, scopeContent };
-};
-
-
-
+    return { titleContent, scopeContent };
+  };
 
   const { titleContent, scopeContent } = parseAnswer();
 
